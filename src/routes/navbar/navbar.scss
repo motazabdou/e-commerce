@@ -3,4 +3,22 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
+
+    // .nav-links {
+    //     background-color: red;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     width: 10%;
+    // }
+
+    .nav-link {
+        margin-left: 40px;
+        font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+            color: #666;
+            transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) all 1.5s;
+        }
+    }
 }
