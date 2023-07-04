@@ -19,17 +19,18 @@ const firebaseConfig = {
     appId: "1:397992696019:web:c18b307d58152fadeb1c26"
 };
 
-// Initialize Firebase
+// Initialize Firebase app
 const firebaseApp = initializeApp(firebaseConfig);
 
 // to use google authentication, we need to initialize a provider, here we're asking client to get the select account prompt
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({
     prompt: "select_account"
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
 
 //instantiate firestore database that will be accessed to get and setDocs
 export const db = getFirestore();
